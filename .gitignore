@@ -1,0 +1,15 @@
+node_modules/
+.idea
+**/.env
+npm-debug.log*
+app/config/
+
+web/tests/errorShots/
+web/tests/testResults/
+web/tests/test/config.js
+web/tests/allure-report/
+web/tests/allure-results/
+
+**/*.lerna_backup
+**/package-lock.json
+!server/services/**/package-lock.json

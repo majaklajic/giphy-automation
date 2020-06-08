@@ -1,0 +1,48 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1591556928088' stop='1591556930127'>
+    <name>Upload</name>
+    <title>Upload</title>
+    <test-cases>
+        <test-case start='1591556928088' status='passed' stop='1591556930126'>
+            <name>should upload image manually</name>
+            <title>should upload image manually</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-83.0.4103.97'/>
+            </parameters>
+            <steps>
+                <step start='1591556928094' status='passed' stop='1591556930082'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='86890d58-8963-4ca1-b613-fc95ef1d89aa-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591556930084' status='passed' stop='1591556930100'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='abdd533b-41ed-449b-8bab-72d935419f0d-attachment.json' type='application/json' size='59'/>
+                        <attachment title='Response' source='da7cef76-2cb4-4720-b9c8-dda9ba7db619-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591556930107' status='passed' stop='1591556930121'>
+                    <name>POST /session/:sessionId/elements</name>
+                    <title>POST /session/:sessionId/elements</title>
+                    <attachments>
+                        <attachment title='Request' source='0e1d91e1-5a4c-4fb6-b60a-d24db250369f-attachment.json' type='application/json' size='59'/>
+                        <attachment title='Response' source='52743e8c-f51c-4bcf-b39c-5307f6ea1305-attachment.json' type='application/json' size='96'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,172 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1591561882115' stop='1591561887630'>
+    <name>Upload</name>
+    <title>Upload</title>
+    <test-cases>
+        <test-case start='1591561882115' status='passed' stop='1591561885777'>
+            <name>should upload image manually</name>
+            <title>should upload image manually</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-83.0.4103.97'/>
+            </parameters>
+            <steps>
+                <step start='1591561882119' status='passed' stop='1591561884000'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='b8aee99d-f1aa-4068-9102-d5095c7fa40e-attachment.json' type='application/json' size='38'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561884001' status='passed' stop='1591561884016'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='d3872699-eb93-4840-a7cb-1f10081d1e18-attachment.json' type='application/json' size='65'/>
+                        <attachment title='Response' source='e785f581-4081-4883-8ecb-31be1f96acf2-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561884021' status='passed' stop='1591561884045'>
+                    <name>POST /session/:sessionId/element/0.9690784096783054-1/clear</name>
+                    <title>POST /session/:sessionId/element/0.9690784096783054-1/clear</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591561884049' status='passed' stop='1591561884151'>
+                    <name>POST /session/:sessionId/element/0.9690784096783054-1/value</name>
+                    <title>POST /session/:sessionId/element/0.9690784096783054-1/value</title>
+                    <attachments>
+                        <attachment title='Request' source='771187fe-aa95-48f1-b5f4-6a0cebdc6c43-attachment.json' type='application/json' size='172'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561884151' status='passed' stop='1591561884163'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='c1d57179-93d8-4f50-a259-ef555e66baf8-attachment.json' type='application/json' size='68'/>
+                        <attachment title='Response' source='0c1f4794-14a2-46dc-b809-f9891485bc41-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561884165' status='passed' stop='1591561884185'>
+                    <name>POST /session/:sessionId/element/0.9690784096783054-2/clear</name>
+                    <title>POST /session/:sessionId/element/0.9690784096783054-2/clear</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591561884186' status='passed' stop='1591561884314'>
+                    <name>POST /session/:sessionId/element/0.9690784096783054-2/value</name>
+                    <title>POST /session/:sessionId/element/0.9690784096783054-2/value</title>
+                    <attachments>
+                        <attachment title='Request' source='46c05ac3-ecfd-44c4-911d-1f32d6abb887-attachment.json' type='application/json' size='82'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561884314' status='passed' stop='1591561884334'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='22937ca9-bb21-42bc-8005-dd3f1c8f2408-attachment.json' type='application/json' size='78'/>
+                        <attachment title='Response' source='cab24d8f-6bea-451c-9995-1e3c0cb1b4ab-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561884336' status='passed' stop='1591561885776'>
+                    <name>POST /session/:sessionId/element/0.9690784096783054-3/click</name>
+                    <title>POST /session/:sessionId/element/0.9690784096783054-3/click</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1591561885777' status='broken' stop='1591561887629'>
+            <name>should upload image manually</name>
+            <title>should upload image manually</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-83.0.4103.97'/>
+            </parameters>
+            <steps>
+                <step start='1591561885778' status='passed' stop='1591561886940'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='f20de5ad-9b3a-4a3d-a64a-1e7bdc321471-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561886960' status='passed' stop='1591561886984'>
+                    <name>POST /session/:sessionId/file</name>
+                    <title>POST /session/:sessionId/file</title>
+                    <attachments>
+                        <attachment title='Request' source='69ab66c6-d163-41ad-a123-5acf9af037ba-attachment.json' type='application/json' size='42572'/>
+                        <attachment title='Response' source='718a906b-cc33-487e-8112-c16d8a71f3aa-attachment.json' type='application/json' size='127'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561886984' status='passed' stop='1591561886996'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='5ada52ad-57a2-456f-858e-cfd360d9d068-attachment.json' type='application/json' size='64'/>
+                        <attachment title='Response' source='dcc66d57-a025-4890-849b-0729b5f0f1a9-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561886998' status='passed' stop='1591561887022'>
+                    <name>POST /session/:sessionId/element/0.7379674669646532-1/clear</name>
+                    <title>POST /session/:sessionId/element/0.7379674669646532-1/clear</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591561887040' status='passed' stop='1591561887070'>
+                    <name>POST /session/:sessionId/element/0.7379674669646532-1/value</name>
+                    <title>POST /session/:sessionId/element/0.7379674669646532-1/value</title>
+                    <attachments>
+                        <attachment title='Request' source='4095c164-b887-425b-aa68-ba2a94929956-attachment.json' type='application/json' size='1144'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561887071' status='broken' stop='1591561887629'>
+                    <name>POST /session/:sessionId/frame</name>
+                    <title>POST /session/:sessionId/frame</title>
+                    <attachments>
+                        <attachment title='Request' source='0c1e9cf3-2946-444a-9942-a3f26ea17644-attachment.json' type='application/json' size='54'/>
+                    </attachments>
+                    <steps>
+                        <step start='1591561887107' status='passed' stop='1591561887628'>
+                            <name>GET /session/:sessionId/screenshot</name>
+                            <title>GET /session/:sessionId/screenshot</title>
+                            <attachments>
+                                <attachment title='Screenshot' source='7066317c-4398-4dff-b80e-90d314eeb0dd-attachment.png' type='image/png' size='398059'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>no such frame
+                  (Session info: chrome=83.0.4103.97)
+                  (Driver info: chromedriver=2.43.600229 (3fae4d0cda5334b4f533bede5a4787f7b832d052),platform=Mac OS X 10.15.5 x86_64)</message>
+                <stack-trace>Error: no such frame
+                  (Session info: chrome=83.0.4103.97)
+                  (Driver info: chromedriver=2.43.600229 (3fae4d0cda5334b4f533bede5a4787f7b832d052),platform=Mac OS X 10.15.5 x86_64)
+                    at Context.&lt;anonymous> (/Users/maja/sources/giphy-automation/test/specs/upload.spec.js:21:13)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

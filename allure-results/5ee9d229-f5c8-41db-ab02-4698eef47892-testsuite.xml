@@ -1,0 +1,179 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1591556743251' stop='1591556755748'>
+    <name>Upload</name>
+    <title>Upload</title>
+    <test-cases>
+        <test-case start='1591556743252' status='broken' stop='1591556755747'>
+            <name>should upload image manually</name>
+            <title>should upload image manually</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-83.0.4103.97'/>
+            </parameters>
+            <steps>
+                <step start='1591556743256' status='passed' stop='1591556745218'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='99ac5887-2f39-4129-b1d1-f8044e4e955e-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591556745220' status='passed' stop='1591556745233'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='cba44170-5c8c-44d5-aa95-19e2f9c08dcc-attachment.json' type='application/json' size='64'/>
+                        <attachment title='Response' source='e10852fa-44fc-4668-94f8-3016d86fcb78-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591556745240' status='passed' stop='1591556745251'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556745745' status='passed' stop='1591556745758'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556746242' status='passed' stop='1591556746256'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556746745' status='passed' stop='1591556746758'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556747244' status='passed' stop='1591556747258'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556747739' status='passed' stop='1591556747750'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556748240' status='passed' stop='1591556748250'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556748740' status='passed' stop='1591556748751'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556749240' status='passed' stop='1591556749252'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556749743' status='passed' stop='1591556749753'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556750240' status='passed' stop='1591556750250'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556750739' status='passed' stop='1591556750751'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556751241' status='passed' stop='1591556751253'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556751740' status='passed' stop='1591556751753'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556752240' status='passed' stop='1591556752252'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556752744' status='passed' stop='1591556752755'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556753241' status='passed' stop='1591556753253'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556753745' status='passed' stop='1591556753757'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556754242' status='passed' stop='1591556754253'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556754738' status='passed' stop='1591556754745'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591556755241' status='passed' stop='1591556755746'>
+                    <name>GET /session/:sessionId/element/0.9576108641513184-1/displayed</name>
+                    <title>GET /session/:sessionId/element/0.9576108641513184-1/displayed</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='97ba5fed-25e2-45f1-99c4-ec0156fde751-attachment.png' type='image/png' size='335904'/>
+                    </attachments>
+                    <steps>
+                        <step start='1591556755253' status='passed' stop='1591556755255'>
+                            <name>GET /session/:sessionId/screenshot</name>
+                            <title>GET /session/:sessionId/screenshot</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>element ("input[type="file"]") still not displayed after 10000ms</message>
+                <stack-trace>Error: element ("input[type="file"]") still not displayed after 10000ms
+                    at Context.&lt;anonymous> (/Users/maja/sources/giphy-automation/test/specs/upload.spec.js:6:29)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

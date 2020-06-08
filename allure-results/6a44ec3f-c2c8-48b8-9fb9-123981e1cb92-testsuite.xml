@@ -1,0 +1,95 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1591561235596' stop='1591561238193'>
+    <name>Upload</name>
+    <title>Upload</title>
+    <test-cases>
+        <test-case start='1591561235597' status='broken' stop='1591561238192'>
+            <name>should upload image manually</name>
+            <title>should upload image manually</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-83.0.4103.97'/>
+            </parameters>
+            <steps>
+                <step start='1591561235600' status='passed' stop='1591561237582'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='362108ad-eb72-41a4-b3c9-f1e2d9d657ff-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561237600' status='passed' stop='1591561237622'>
+                    <name>POST /session/:sessionId/file</name>
+                    <title>POST /session/:sessionId/file</title>
+                    <attachments>
+                        <attachment title='Request' source='70414b30-36e9-4037-b5f4-472d09dba895-attachment.json' type='application/json' size='42572'/>
+                        <attachment title='Response' source='cc1c25d3-267e-493b-b798-75578ef9de28-attachment.json' type='application/json' size='128'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561237624' status='passed' stop='1591561237639'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='0c040d63-50e1-4619-a715-e13a1a977a92-attachment.json' type='application/json' size='64'/>
+                        <attachment title='Response' source='7cf4c0f4-4e05-4c41-ac99-54f7ec89f0d2-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561237645' status='passed' stop='1591561237669'>
+                    <name>POST /session/:sessionId/element/0.2890470202583224-1/clear</name>
+                    <title>POST /session/:sessionId/element/0.2890470202583224-1/clear</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591561237688' status='passed' stop='1591561237727'>
+                    <name>POST /session/:sessionId/element/0.2890470202583224-1/value</name>
+                    <title>POST /session/:sessionId/element/0.2890470202583224-1/value</title>
+                    <attachments>
+                        <attachment title='Request' source='05fcaf8f-ff76-4f93-9004-f702646a69e5-attachment.json' type='application/json' size='1153'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561237727' status='passed' stop='1591561237740'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='360741c3-576e-4c5f-8e04-daf93112f2b8-attachment.json' type='application/json' size='73'/>
+                        <attachment title='Response' source='4067a4eb-c293-4c78-a276-b48df34de47a-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561237742' status='broken' stop='1591561238192'>
+                    <name>POST /session/:sessionId/element/0.2890470202583224-2/click</name>
+                    <title>POST /session/:sessionId/element/0.2890470202583224-2/click</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1591561237843' status='passed' stop='1591561238190'>
+                            <name>GET /session/:sessionId/screenshot</name>
+                            <title>GET /session/:sessionId/screenshot</title>
+                            <attachments>
+                                <attachment title='Screenshot' source='513a5dfb-36e5-4b9f-b0ce-7cdb1f9c65db-attachment.png' type='image/png' size='128619'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>unknown error: Element &lt;a id="login-button" class="_3aOh8fm6ZBjiO_hPnsRTOF" rel="nofollow" href="/login?next=%2Fupload">...&lt;/a> is not clickable at point (1027, 38). Other element would receive the click: &lt;div class="modal__Container-sc-10s3nc0-0 haQTAV">...&lt;/div>
+                  (Session info: chrome=83.0.4103.97)
+                  (Driver info: chromedriver=2.43.600229 (3fae4d0cda5334b4f533bede5a4787f7b832d052),platform=Mac OS X 10.15.5 x86_64)</message>
+                <stack-trace>Error: unknown error: Element &lt;a id="login-button" class="_3aOh8fm6ZBjiO_hPnsRTOF" rel="nofollow" href="/login?next=%2Fupload">...&lt;/a> is not clickable at point (1027, 38). Other element would receive the click: &lt;div class="modal__Container-sc-10s3nc0-0 haQTAV">...&lt;/div>
+                  (Session info: chrome=83.0.4103.97)
+                  (Driver info: chromedriver=2.43.600229 (3fae4d0cda5334b4f533bede5a4787f7b832d052),platform=Mac OS X 10.15.5 x86_64)
+                    at Context.&lt;anonymous> (/Users/maja/sources/giphy-automation/test/specs/upload.spec.js:14:31)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

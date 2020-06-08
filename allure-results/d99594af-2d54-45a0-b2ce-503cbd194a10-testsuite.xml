@@ -1,0 +1,75 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1591561334019' stop='1591561336622'>
+    <name>Upload</name>
+    <title>Upload</title>
+    <test-cases>
+        <test-case start='1591561334019' status='broken' stop='1591561336622'>
+            <name>should upload image manually</name>
+            <title>should upload image manually</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-83.0.4103.97'/>
+            </parameters>
+            <steps>
+                <step start='1591561334024' status='passed' stop='1591561336090'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='acf6a447-39c8-45d5-8089-639dfb389aa5-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561336108' status='passed' stop='1591561336131'>
+                    <name>POST /session/:sessionId/file</name>
+                    <title>POST /session/:sessionId/file</title>
+                    <attachments>
+                        <attachment title='Request' source='13f07242-7673-4233-9e33-19e318da788c-attachment.json' type='application/json' size='42572'/>
+                        <attachment title='Response' source='5ada9c6a-cd13-425a-a0dd-4fca02d0bcb4-attachment.json' type='application/json' size='127'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561336132' status='passed' stop='1591561336149'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='476fbf31-6039-4ca0-8417-b2be4cefb00a-attachment.json' type='application/json' size='64'/>
+                        <attachment title='Response' source='7d096c43-4670-4416-bfa2-ae4231f9431b-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561336153' status='passed' stop='1591561336174'>
+                    <name>POST /session/:sessionId/element/0.3959498820906262-1/clear</name>
+                    <title>POST /session/:sessionId/element/0.3959498820906262-1/clear</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1591561336193' status='passed' stop='1591561336233'>
+                    <name>POST /session/:sessionId/element/0.3959498820906262-1/value</name>
+                    <title>POST /session/:sessionId/element/0.3959498820906262-1/value</title>
+                    <attachments>
+                        <attachment title='Request' source='b461b2e3-ea78-4a89-838d-59517c22e348-attachment.json' type='application/json' size='1144'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1591561336238' status='passed' stop='1591561336621'>
+                    <name>GET /session/:sessionId/screenshot</name>
+                    <title>GET /session/:sessionId/screenshot</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='57d72b62-d288-4774-ba82-ad80338b0ef2-attachment.png' type='image/png' size='129565'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Cannot read property 'click' of undefined</message>
+                <stack-trace>TypeError: Cannot read property 'click' of undefined
+                    at Context.&lt;anonymous> (/Users/maja/sources/giphy-automation/test/specs/upload.spec.js:14:31)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
