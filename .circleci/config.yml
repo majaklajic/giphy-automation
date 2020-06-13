@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
+  browser-tools: circleci/browser-tools@1.0.1
 jobs:
   build-and-test:
     environment:
@@ -22,6 +23,8 @@ jobs:
       - node/install:
           install-npm: true
           node-version: 12.16.3
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - run: 
           name: node version
           command: node --version
