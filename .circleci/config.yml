@@ -24,6 +24,7 @@ jobs:
       - run:
           name: install curl
           command: sudo apt install curl
+
       - node/install:
           install-npm: true
           node-version: 12.16.3
