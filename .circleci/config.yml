@@ -9,21 +9,22 @@ jobs:
       _JAVA_OPTIONS: "-Xmx3g"
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
     docker: # run the steps with Docker
-      - image: circleci/openjdk:11.0.3-jdk-stretch
-#      - image: selenium/standalone-chrome:latest
+#      - image: circleci/openjdk:11.0.3-jdk-stretch
+      - image: selenium/standalone-chrome:latest
     working_directory: ~/giphy
     steps:
       - checkout:
           path: ~/giphy
       - setup_remote_docker
-      - run:
-          name: Setup Browserstack credentials
-          command: |
-            echo 'export BROWSERSTACK_USERNAME="${BROWSERSTACK_USERNAME}"' >> $BASH_ENV
-            echo 'export BROWSERSTACK_KEY="${BROWSERSTACK_KEY}"' >> $BASH_ENV
 #      - run:
-#          name: install curl
-#          command: sudo apt install curl
+#          name: Setup Browserstack credentials
+#          command: |
+#            echo 'export BROWSERSTACK_USERNAME="${BROWSERSTACK_USERNAME}"' >> $BASH_ENV
+#            echo 'export BROWSERSTACK_KEY="${BROWSERSTACK_KEY}"' >> $BASH_ENV
+      - run:
+          name: install curl
+          command: sudo apt install curl
+
       - node/install:
           install-npm: true
           node-version: 12.16.3
@@ -38,11 +39,12 @@ jobs:
       - run:
           name: npm run tests
           command: npm run test-all
-
- #     - node/with-cache:
- #         steps:
- #           - run: npm install
- #           - run: npm run test-all
+      - run:
+          name: npm generate report
+          command: npm run generate-report
+      - store_artifacts:
+          path: ./allure-results-html
+          destination: circleci-docs
 workflows:
     build-and-test:
       jobs:
