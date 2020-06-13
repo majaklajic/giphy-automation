@@ -10,7 +10,7 @@ jobs:
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
     docker: # run the steps with Docker
 #      - image: circleci/openjdk:11.0.3-jdk-stretch
-      - image: selenium/standalone-chrome:3.1.0
+      - image: selenium/standalone-chrome:latest
     working_directory: ~/giphy
     steps:
       - checkout:
@@ -21,6 +21,9 @@ jobs:
           command: |
             echo 'export BROWSERSTACK_USERNAME="${BROWSERSTACK_USERNAME}"' >> $BASH_ENV
             echo 'export BROWSERSTACK_KEY="${BROWSERSTACK_KEY}"' >> $BASH_ENV
+      - run:
+          name: install curl
+          command: sudo apt install curl
       - node/install:
           install-npm: true
           node-version: 12.16.3
@@ -51,4 +54,3 @@ workflows:
                   - develop
                   - master
                   - circleci-project-setup
-                  
