@@ -1,0 +1,56 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+#  browser-tools: circleci/browser-tools@1.0.1
+jobs:
+  build-and-test:
+    environment:
+      # Configure the JVM and Gradle to avoid OOM errors
+      _JAVA_OPTIONS: "-Xmx3g"
+      GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
+    docker: # run the steps with Docker
+#      - image: circleci/openjdk:11.0.3-jdk-stretch
+      - image: selenium/standalone-chrome:latest
+    working_directory: ~/giphy
+    steps:
+      - checkout:
+          path: ~/giphy
+      - setup_remote_docker
+      - run:
+          name: Setup Browserstack credentials
+          command: |
+            echo 'export BROWSERSTACK_USERNAME="${BROWSERSTACK_USERNAME}"' >> $BASH_ENV
+            echo 'export BROWSERSTACK_KEY="${BROWSERSTACK_KEY}"' >> $BASH_ENV
+      - run:
+          name: install curl
+          command: sudo apt install curl
+      - node/install:
+          install-npm: true
+          node-version: 12.16.3
+#      - browser-tools/install-chrome
+#      - browser-tools/install-chromedriver
+      - run: 
+          name: node version
+          command: node --version
+      - run:
+          name: npm install
+          command: npm install
+      - run:
+          name: npm run tests
+          command: npm run test-all
+
+ #     - node/with-cache:
+ #         steps:
+ #           - run: npm install
+ #           - run: npm run test-all
+workflows:
+    build-and-test:
+      jobs:
+        - build-and-test:
+            context: giphy
+            filters:
+              branches:
+                only: 
+                  - develop
+                  - master
+                  - circleci-project-setup
