@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-all": "wdio wdio.conf.js",
+    "test-all": "wdio wdio-browserstack.conf.js",
     "test-login": "wdio wdio.conf.js --spec ./test/specs/login.spec.js",
     "test-upload": "wdio wdio.conf.js --spec ./test/specs/upload.spec.js",
     "test-search": "wdio wdio.conf.js --spec ./test/specs/search.spec.js",
-    "generate-report": "allure generate ./allure-results --clean && allure open"
+    "generate-report": "allure generate ./allure-results --clean && allure open",
+    "test-init-browserstack": "wdio wdio-browserstack.conf.js --spec ./test/specs/init.spec.js"
   },
   "keywords": [],
   "author": "",
@@ -19,12 +20,15 @@
     "@babel/preset-env": "^7.10.2",
     "@babel/register": "^7.10.1",
     "@wdio/allure-reporter": "5.16.0",
+    "@wdio/browserstack-service": "^6.1.15",
     "@wdio/cli": "^6.1.16",
+    "@wdio/junit-reporter": "^6.1.14",
     "@wdio/local-runner": "^6.1.16",
     "@wdio/mocha-framework": "^6.1.14",
     "@wdio/selenium-standalone-service": "^6.1.14",
     "@wdio/spec-reporter": "^6.1.14",
     "@wdio/sync": "^6.1.14",
+    "browserstack-local": "^1.4.5",
     "chai": "^4.2.0",
     "selenium-standalone": "^6.17.0",
     "webdriverio": "^6.1.16"
