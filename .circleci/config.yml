@@ -46,7 +46,7 @@ jobs:
           path: ./allure-results-html
           destination: circleci-docs
       - slack/notify:
-          message: "Test are done.\nE2E report: ${https://${CIRCLE_BUILD_NUM}-270674497-gh.circle-artifacts.com/${CIRCLE_NODE_INDEX}/circleci-docs/index.html\nBuild: ${CIRCLE_BUILD_URL}\nGit: https://github.com/majaklajic/giphy-automation/commits/${CIRCLE_SHA1}"
+          message: "Test are done.\nE2E report: https://${CIRCLE_BUILD_NUM}-270674497-gh.circle-artifacts.com/${CIRCLE_NODE_INDEX}/circleci-docs/index.html\nBuild: ${CIRCLE_BUILD_URL}\nGit: https://github.com/majaklajic/giphy-automation/commits/${CIRCLE_SHA1}"
           webhook: "${SLACK_WEBHOOK}"
 workflows:
     build-and-test:
