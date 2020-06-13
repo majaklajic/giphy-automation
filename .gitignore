@@ -6,8 +6,8 @@ app/config/
 
 errorShots
 testResults
-/allure-report/
-/allure-results/
+allure-report/
+allure-results/
 
 **/*.lerna_backup
 **/package-lock.json

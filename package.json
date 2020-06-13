@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-all": "wdio wdio-browserstack.conf.js",
+    "test-all": "wdio wdio.conf.js",
     "test-login": "wdio wdio.conf.js --spec ./test/specs/login.spec.js",
     "test-upload": "wdio wdio.conf.js --spec ./test/specs/upload.spec.js",
     "test-search": "wdio wdio.conf.js --spec ./test/specs/search.spec.js",
-    "generate-report": "allure generate ./allure-results --clean && allure open",
+    "generate-report": "allure generate -c ./allure-results -o ./allure-results-html",
     "test-init-browserstack": "wdio wdio-browserstack.conf.js --spec ./test/specs/init.spec.js"
   },
   "keywords": [],
@@ -29,6 +29,7 @@
     "@wdio/spec-reporter": "^6.1.14",
     "@wdio/sync": "^6.1.14",
     "browserstack-local": "^1.4.5",
+    "allure-commandline": "^2.9.0",
     "chai": "^4.2.0",
     "selenium-standalone": "^6.17.0",
     "webdriverio": "^6.1.16"
