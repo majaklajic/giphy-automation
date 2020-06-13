@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-  browser-tools: circleci/browser-tools@1.0.1
+#  browser-tools: circleci/browser-tools@1.0.1
 jobs:
   build-and-test:
     environment:
@@ -9,7 +9,8 @@ jobs:
       _JAVA_OPTIONS: "-Xmx3g"
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
     docker: # run the steps with Docker
-      - image: circleci/openjdk:11.0.3-jdk-stretch
+#      - image: circleci/openjdk:11.0.3-jdk-stretch
+      - image: selenium/standalone-chrome:3.1.0
     working_directory: ~/giphy
     steps:
       - checkout:
@@ -23,8 +24,8 @@ jobs:
       - node/install:
           install-npm: true
           node-version: 12.16.3
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
+#      - browser-tools/install-chrome
+#      - browser-tools/install-chromedriver
       - run: 
           name: node version
           command: node --version
@@ -50,3 +51,4 @@ workflows:
                   - develop
                   - master
                   - circleci-project-setup
+                  
