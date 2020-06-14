@@ -1,5 +1,6 @@
 # Giphy E2E and API test
-  Web automation with Webdriver.io and API automation with postman/newman
+
+Web automation with Webdriver.io and API automation with postman/newman
 
 ## Requirements
 
@@ -9,7 +10,7 @@
 
 Choose one of the following options:
 
-1. Clone the git repo: 
+1. Clone the git repo:
 
 ```sh
 $ git clone https://github.com/majaklajic/giphy-automation.git
@@ -20,7 +21,6 @@ $ git clone https://github.com/majaklajic/giphy-automation.git
 ```sh
 $ npm install
 ```
-
 
 # How to run E2E tests
 
@@ -66,7 +66,6 @@ Run tests and generate HTML report:
 
 ```sh
 $ cd api-tests/
-$ npm install newman
-$ npm install newman-reporter-htmlextra
-$ newman run Giphy.postman_collection.json -e Giphy.postman_environment.json -r htmlextra
+$ npm install
+$ npm run test-api
 ```

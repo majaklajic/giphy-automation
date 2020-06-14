@@ -1,0 +1,15 @@
+{
+  "name": "api-tests",
+  "version": "1.0.0",
+  "description": "Postman API tests",
+  "main": "index.js",
+  "scripts": {
+    "test-api": "newman run Giphy.postman_collection.json -e Giphy.postman_environment.json -r htmlextra"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "newman": "^5.1.0",
+    "newman-reporter-htmlextra": "^1.16.0"
+  }
+}
