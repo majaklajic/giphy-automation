@@ -1,0 +1,428 @@
+{
+  "info": {
+    "_postman_id": "96c9cfbe-7188-45cb-b85d-a25a76f71643",
+    "name": "Giphy ",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Search",
+      "item": [
+        {
+          "name": "GET Gif Search",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "4ef5eb6c-2b2d-406f-ace2-c24ea8754c11",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apiKey",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{apiEndpoint}}/v1/gifs/search?q\n=wine&limit=10",
+              "host": ["{{apiEndpoint}}"],
+              "path": ["v1", "gifs", "search"],
+              "query": [
+                {
+                  "key": "q\n",
+                  "value": "wine"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Stickers Search",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c394d0f6-47b9-4e3b-a611-718e809152db",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is less than 200ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(200);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apiKey",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{apiEndpoint}}/v1/stickers/search?q\n=wine&limit=10",
+              "host": ["{{apiEndpoint}}"],
+              "path": ["v1", "stickers", "search"],
+              "query": [
+                {
+                  "key": "q\n",
+                  "value": "wine"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Get item by ID",
+      "item": [
+        {
+          "name": "GET Gif by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "739330af-46f2-4e30-988f-89542080170d",
+                "exec": [
+                  "require('lodash');",
+                  "const body = pm.response.text();",
+                  "const jsonResponse = JSON.parse(body);",
+                  "const url = \"https://giphy.com/gifs/friends-friendship-bff-3oEdvaba4h0I536VYQ\";",
+                  "const urlFromResponse = _.get(jsonResponse, 'data.url')",
+                  "",
+                  "",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid and have a body\", function () {",
+                  "     pm.response.to.be.ok;",
+                  "     pm.response.to.be.withBody;",
+                  "     pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Body matches bitly_gif_url\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"bitly_gif_url\");",
+                  "});",
+                  "",
+                  "pm.test(\"Url to be equal\", function () {",
+                  "    pm.expect(url).to.be.equal(urlFromResponse);",
+                  "});",
+                  "",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apiKey",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{apiEndpoint}}/v1/gifs/{{gifId}}",
+              "host": ["{{apiEndpoint}}"],
+              "path": ["v1", "gifs", "{{gifId}}"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Trending",
+      "item": [
+        {
+          "name": "GET Trending gifs",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "17cbb307-eb10-43e4-a3a3-2b6fa79f7f99",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"response must be valid and have a body\", function () {",
+                  "     pm.response.to.be.ok;",
+                  "     pm.response.to.be.withBody;",
+                  "     pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Body matches bitly_gif_url\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"bitly_gif_url\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apiKey",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{apiEndpoint}}/v1/gifs/trending",
+              "host": ["{{apiEndpoint}}"],
+              "path": ["v1", "gifs", "trending"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Trending stickers",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "87c91102-4f65-42c0-96e8-dcebba8e8efd",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"response must be valid and have a body\", function () {",
+                  "     pm.response.to.be.ok;",
+                  "     pm.response.to.be.withBody;",
+                  "     pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Body matches bitly_gif_url\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"bitly_gif_url\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apiKey",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{apiEndpoint}}/v1/stickers/trending?limit=20",
+              "host": ["{{apiEndpoint}}"],
+              "path": ["v1", "stickers", "trending"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Random",
+      "item": [
+        {
+          "name": "GET Random gif",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "125f6be5-5b67-4023-8f2a-e3bb4b37b3fc",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"response must be valid and have a body\", function () {",
+                  "     pm.response.to.be.ok;",
+                  "     pm.response.to.be.withBody;",
+                  "     pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Body matches bitly_gif_url\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"bitly_gif_url\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apiKey",
+                "type": "text",
+                "value": "{{apiKey}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiEndpoint}}/v1/gifs/random?tag=ocean",
+              "host": ["{{apiEndpoint}}"],
+              "path": ["v1", "gifs", "random"],
+              "query": [
+                {
+                  "key": "tag",
+                  "value": "ocean"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Random sticker",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "472239fe-f6de-4731-bd57-1f459ea0d5c8",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"response must be valid and have a body\", function () {",
+                  "     pm.response.to.be.ok;",
+                  "     pm.response.to.be.withBody;",
+                  "     pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Body matches bitly_gif_url\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"bitly_gif_url\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apiKey",
+                "type": "text",
+                "value": "{{apiKey}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiEndpoint}}/v1/stickers/random?tag=ocean",
+              "host": ["{{apiEndpoint}}"],
+              "path": ["v1", "stickers", "random"],
+              "query": [
+                {
+                  "key": "tag",
+                  "value": "ocean"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "GET Autocomplete",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "e6825ae8-1304-4d91-b5c6-26fb14909c7e",
+            "exec": [
+              "require('lodash');",
+              "const body = pm.response.text();",
+              "const jsonResponse = JSON.parse(body);",
+              "const firstAutocompleteName = jsonResponse.data[0].name;",
+              "",
+              "",
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Body matches bitly_gif_url\", function () {",
+              "    pm.expect(firstAutocompleteName).to.be.equal(\"ocean\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "apiKey",
+            "type": "text",
+            "value": "{{apiKey}}"
+          }
+        ],
+        "url": {
+          "raw": "{{apiEndpoint}}/v1/gifs/search/tags?q=ocea",
+          "host": ["{{apiEndpoint}}"],
+          "path": ["v1", "gifs", "search", "tags"],
+          "query": [
+            {
+              "key": "q",
+              "value": "ocea"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
