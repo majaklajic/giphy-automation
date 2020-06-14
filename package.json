@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test-all": "wdio wdio.conf.js",
+    "test-all-browserstack": "wdio-browserstack.conf.js",
+    "test-init": "wdio wdio.conf.js --spec ./test/specs/init.spec.js",
     "test-login": "wdio wdio.conf.js --spec ./test/specs/login.spec.js",
     "test-upload": "wdio wdio.conf.js --spec ./test/specs/upload.spec.js",
     "test-search": "wdio wdio.conf.js --spec ./test/specs/search.spec.js",
-    "generate-report": "allure generate -c ./allure-results -o ./allure-results-html",
-    "test-init-browserstack": "wdio wdio-browserstack.conf.js --spec ./test/specs/init.spec.js"
+    "generate-report": "allure generate -c ./allure-results -o ./allure-results-html"
   },
   "keywords": [],
   "author": "",
