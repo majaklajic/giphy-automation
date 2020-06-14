@@ -4,7 +4,7 @@
   "description": "Postman API tests",
   "main": "index.js",
   "scripts": {
-    "test-api": "newman run Giphy.postman_collection.json -e Giphy.postman_environment.json -r htmlextra"
+    "test-api": "newman run Giphy.postman_collection.json -e Giphy.postman_environment.json -r htmlextra --reporter-html-export newman.html"
   },
   "author": "",
   "license": "ISC",
