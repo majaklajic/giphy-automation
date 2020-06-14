@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
+  newman: postman/newman@0.0.2
   slack: circleci/slack@3.4.2
 jobs:
   build-and-test:
@@ -9,18 +10,18 @@ jobs:
       _JAVA_OPTIONS: "-Xmx3g"
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
     docker: # run the steps with Docker
-#      - image: circleci/openjdk:11.0.3-jdk-stretch
+      #      - image: circleci/openjdk:11.0.3-jdk-stretch
       - image: selenium/standalone-chrome:latest
     working_directory: ~/giphy
     steps:
       - checkout:
           path: ~/giphy
       - setup_remote_docker
-#      - run:
-#          name: Setup Browserstack credentials
-#          command: |
-#            echo 'export BROWSERSTACK_USERNAME="${BROWSERSTACK_USERNAME}"' >> $BASH_ENV
-#            echo 'export BROWSERSTACK_KEY="${BROWSERSTACK_KEY}"' >> $BASH_ENV
+      #      - run:
+      #          name: Setup Browserstack credentials
+      #          command: |
+      #            echo 'export BROWSERSTACK_USERNAME="${BROWSERSTACK_USERNAME}"' >> $BASH_ENV
+      #            echo 'export BROWSERSTACK_KEY="${BROWSERSTACK_KEY}"' >> $BASH_ENV
       - run:
           name: install curl
           command: sudo apt install curl
@@ -28,9 +29,9 @@ jobs:
       - node/install:
           install-npm: true
           node-version: 12.16.3
-#      - browser-tools/install-chrome
-#      - browser-tools/install-chromedriver
-      - run: 
+      #      - browser-tools/install-chrome
+      #      - browser-tools/install-chromedriver
+      - run:
           name: node version
           command: node --version
       - run:
@@ -42,21 +43,26 @@ jobs:
       - run:
           name: npm generate report
           command: npm run generate-report
+      - run:
+          name:
       - store_artifacts:
           path: ./allure-results-html
           destination: circleci-docs
+      - newman/newman-run:
+          collection: ./api-tests/Giphy.postman_collection.json
+          environment: ./api-tests/Giphy.environment.json
       - slack/notify:
           message: "Test are done.\nE2E report: https://${CIRCLE_BUILD_NUM}-270674497-gh.circle-artifacts.com/${CIRCLE_NODE_INDEX}/circleci-docs/index.html\nBuild: ${CIRCLE_BUILD_URL}\nGit: https://github.com/majaklajic/giphy-automation/commits/${CIRCLE_SHA1}"
           webhook: "${SLACK_WEBHOOK}"
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test:
-            context: giphy
-            filters:
-              branches:
-                only: 
-                  - develop
-                  - master
-                  - circleci-project-setup
-                  - /feature.*/
+  build-and-test:
+    jobs:
+      - build-and-test:
+          context: giphy
+          filters:
+            branches:
+              only:
+                - develop
+                - master
+                - circleci-project-setup
+                - /feature.*/
