@@ -12,7 +12,7 @@ Choose one of the following options:
 1. Clone the git repo: 
 
 ```sh
-$ `git clone https://github.com/majaklajic/giphy-automation.git
+$ git clone https://github.com/majaklajic/giphy-automation.git
 ```
 
 2. Install the dependencies:
