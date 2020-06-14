@@ -9,27 +9,18 @@ jobs:
       _JAVA_OPTIONS: "-Xmx3g"
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
     docker: # run the steps with Docker
-#      - image: circleci/openjdk:11.0.3-jdk-stretch
       - image: selenium/standalone-chrome:latest
     working_directory: ~/giphy
     steps:
       - checkout:
           path: ~/giphy
       - setup_remote_docker
-#      - run:
-#          name: Setup Browserstack credentials
-#          command: |
-#            echo 'export BROWSERSTACK_USERNAME="${BROWSERSTACK_USERNAME}"' >> $BASH_ENV
-#            echo 'export BROWSERSTACK_KEY="${BROWSERSTACK_KEY}"' >> $BASH_ENV
       - run:
           name: install curl
           command: sudo apt install curl
-
       - node/install:
           install-npm: true
           node-version: 12.16.3
-#      - browser-tools/install-chrome
-#      - browser-tools/install-chromedriver
       - run: 
           name: node version
           command: node --version
@@ -44,6 +35,19 @@ jobs:
           command: npm run generate-report
       - store_artifacts:
           path: ./allure-results-html
+          destination: circleci-docs
+      - run:
+          name: install Newman for API tests
+          command: |
+            cd api-tests
+            npm install 
+      - run:
+          name: run API tests
+          command: |
+            cd api-tests
+            npm run test-api
+      - store_artifacts:
+          path: ./api-tests/newman
           destination: circleci-docs
       - slack/notify:
           message: "Test are done.\nE2E report: https://${CIRCLE_BUILD_NUM}-270674497-gh.circle-artifacts.com/${CIRCLE_NODE_INDEX}/circleci-docs/index.html\nBuild: ${CIRCLE_BUILD_URL}\nGit: https://github.com/majaklajic/giphy-automation/commits/${CIRCLE_SHA1}"
