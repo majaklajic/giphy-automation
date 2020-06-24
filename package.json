@@ -10,7 +10,8 @@
     "test-login": "wdio wdio.conf.js --spec ./test/specs/login.spec.js",
     "test-upload": "wdio wdio.conf.js --spec ./test/specs/upload.spec.js",
     "test-search": "wdio wdio.conf.js --spec ./test/specs/search.spec.js",
-    "generate-report": "allure generate -c ./allure-results -o ./allure-results-html"
+    "generate-report": "allure generate -c ./allure-results -o ./allure-results-html",
+    "generate-report1": "allure generate -c ./allure-results -o ./allure-results-html"
   },
   "keywords": [],
   "author": "",
